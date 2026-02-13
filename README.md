@@ -54,28 +54,6 @@ python -m smart_code_reviewer web
   Structure     █████████░  Good – 1 long function (45 lines)
   Maintainability ████████░░  Good – 2 blocks with elevated complexity
 ```
-
-## Deploy (free)
-
-Deploy the web UI to **Render** (free tier):
-
-1. Push this repo to **GitHub** (if not already).
-2. Go to [dashboard.render.com](https://dashboard.render.com) → **New** → **Web Service**.
-3. Connect your repo and use:
-   - **Build command:** `pip install -r requirements.txt`
-   - **Start command:** `uvicorn smart_code_reviewer.app:app --host 0.0.0.0 --port $PORT`
-4. Deploy. Your app will be at `https://<your-service-name>.onrender.com`.
-
-Or use the **Blueprint**: connect the repo and Render will read `render.yaml` to create the service.
-
-**Note:** Free tier services spin down after ~15 min idle; the first request after that may take a minute to wake.
-
-## Project layout
-
-- `smart_code_reviewer/` – main package
-- `render.yaml` – Render deploy config
-- `runtime.txt` – Python version for Render
-
 ## License
 
 MIT
