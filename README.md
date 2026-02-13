@@ -134,15 +134,6 @@ Free tier: service sleeps after ~15 min idle; first request may take ~1 min to w
    ```
 3. Your app will be at **`https://smart-code-reviewer.fly.dev`** (or the app name you chose). Open it with `fly open`.
 
-### Deploy to Vercel (free)
-
-1. Push this repo to **GitHub**.
-2. Go to **[vercel.com](https://vercel.com)** → **Add New** → **Project** → import **Smart-Code-Reviewer**.
-3. Vercel will detect the FastAPI app (root `index.py` and `vercel.json`). Click **Deploy**.
-4. Your app will be at **`https://smart-code-reviewer.vercel.app`** (or the project name you set).
-
-Runs as a serverless function; cold starts may add ~1–2 s on first request.
-
 ### Other options (no Docker)
 
 - **Render (Python)** – Use **Build command:** `pip install -r requirements.txt` and **Start command:** `uvicorn smart_code_reviewer.app:app --host 0.0.0.0 --port $PORT` (see `render.yaml`).
@@ -151,8 +142,6 @@ Runs as a serverless function; cold starts may add ~1–2 s on first request.
 ## Project layout
 
 - `smart_code_reviewer/` – main package
-- `index.py` – Vercel entrypoint (exports FastAPI app)
-- `vercel.json` – Vercel config (Python serverless)
 - `Dockerfile` – container image (Render, Fly.io, Railway)
 - `fly.toml` – Fly.io config
 - `render.yaml` – Render config (Python or Docker)
